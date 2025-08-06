@@ -3,6 +3,9 @@
 .sass-cache
 .gist-cache
 .pygments-cache
+.rouge-cache
+.jekyll-cache
+source/.jekyll-cache
 _deploy
 public
 sass.old

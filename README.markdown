@@ -8,14 +8,101 @@ Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
 4. **It's easy to use.** A collection of rake tasks simplifies development and makes deploying a cinch.
 5. **Ships with great plug-ins** some original and others from the Jekyll community &mdash; tested and improved.
 
-**Note**: Octopress requires a minimum Ruby version of `1.9.3-p0`.
+**Note**: This installation has been upgraded to Jekyll 4.3.4 with modern dependencies and security fixes.
+
+## 🚀 Modern Upgrade (2025)
+
+This Octopress installation has been successfully modernized with the following improvements:
+
+### ✅ Security Vulnerabilities Fixed
+- **RedCloth**: Updated to 4.3.4 (CVE-2023-31606 fixed)
+- **yajl-ruby**: Updated to 1.3.1 (CVE-2017-16516, CVE-2022-24795 fixed)
+- **rack**: Updated to 2.2.17 (Multiple CVEs fixed)
+- **kramdown**: Updated to 2.3.2 (CVE-2020-14001 fixed)
+- **sinatra**: Updated to 2.2.4 (CVE-2022-29970, CVE-2024-21510 fixed)
+- **jQuery**: Updated to 1.12.4 (CVE-2015-9251, CVE-2019-11358 fixed)
+
+### ✅ Technical Modernization
+- **Jekyll**: 3.6.3 → 4.3.4
+- **Syntax Highlighting**: Pygments → Rouge
+- **CSS Processing**: Compass → Standard Sass
+- **Markdown Processing**: Enhanced kramdown with GFM support
+
+### ✅ Plugin System Updates
+1. **post_filters.rb**: Rewritten using Jekyll 4 Hooks system
+2. **include_array.rb**: Created Jekyll 4 compatible version
+3. **pygments_code.rb**: Complete rewrite using Rouge instead of Pygments
+4. **Template Updates**: Converted `include_array` tags to standard Liquid syntax
+
+## Getting Started
+
+### Prerequisites
+- Ruby 2.6.0 or higher
+- Bundler gem
+
+### Installation & Usage
+
+```bash
+# Install dependencies
+bundle install
+
+# Start development server
+bundle exec jekyll serve
+# Visit http://localhost:4000
+
+# Build static site
+bundle exec jekyll build
+# Output in public/ directory
+
+# Using Octopress rake tasks (optional)
+bundle exec rake generate
+bundle exec rake preview
+```
+
+### Project Structure
+```
+octopress/
+├── _config.yml          # Jekyll 4 configuration
+├── Gemfile              # Modern dependencies
+├── plugins/             # Updated Jekyll 4 plugins
+├── source/              # Blog source files
+├── public/              # Generated static site
+└── sass/                # Style source files
+```
+
+## Compatibility Notes
+
+### Maintained Features
+- All original blog posts and pages
+- Original URL structure
+- Website appearance and theme
+- Sidebar functionality (GitHub repos, Douban reads, etc.)
+
+### Known Limitations
+- Some Octopress-specific plugins have been disabled for compatibility
+- Advanced plugin features may require further adaptation
+
+## Maintenance
+
+### Regular Updates
+```bash
+# Update dependencies
+bundle update
+
+# Check for security issues
+bundle audit
+```
+
+### Cache Management
+The following cache directories are automatically ignored:
+- `.pygments-cache` / `.rouge-cache`
+- `.sass-cache`
+- `.jekyll-cache`
 
 ## Documentation
 
 Check out [Octopress.org](http://octopress.org/docs) for guides and documentation.
-It should all apply to our current stable version (found in the `master`
-branch). If this is not the case, [please submit a
-fix to our docs repo](https://github.com/octopress/docs).
+Note that some instructions may need adaptation for this Jekyll 4 modernized version.
 
 ## Contributing
 

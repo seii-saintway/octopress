@@ -30,16 +30,18 @@ root: /
 permalink: /blog/:year/:month/:day/:title/
 source: source
 destination: public
-plugins: plugins
+# Jekyll 4 configuration
+plugins_dir: plugins
 code_dir: downloads/code
 category_dir: blog/categories
-markdown: rdiscount
-rdiscount:
-  extensions:
-    - autolink
-    - footnotes
-    - smart
-pygments: true # default python pygments have been replaced by pygments.rb
+markdown: kramdown
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+plugins: 
+  - jekyll-paginate
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
